@@ -1,53 +1,53 @@
+class_name Player
 extends KinematicBody2D
+
+enum States { FREE, ACTION }
 
 export (int) var speed = 200
 
 var velocity : Vector2 = Vector2()
+var state: int = States.FREE
 
-var hole : Area2D = null
-var carried_item : int = -1
+var itemType: int = -1
 
-func _ready():
-	for hole in get_tree().get_nodes_in_group("hole"):
-		hole.connect("area_entered", self, "on_hole_entered", [hole])
-		hole.connect("area_exited", self, "on_hole_exited", [hole])
-	
+onready var interactionTimer: Timer = ($InteractionTimer as Timer)
+onready var sprite: AnimatedSprite = ($Sprite as AnimatedSprite)
+onready var itemSprite: Sprite = ($ItemSprite as Sprite)
+
 func get_input() -> void:
-	velocity = Vector2()
-	if Input.is_action_pressed("right"):
-		velocity.x += 1
-	if Input.is_action_pressed("left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("down"):
-		velocity.y += 1
-	if Input.is_action_pressed("up"):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
-
-func _input(event):
-	if event.is_action_pressed("interact") && hole != null:
-		interact_with_hole()
-
-func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	var _inputVector = Vector2(
+		Input.get_action_strength("right") - Input.get_action_strength("left"),
+		Input.get_action_strength("down") - Input.get_action_strength("up")
+	)
 	
-func on_hole_entered(area : Area2D, _hole : Area2D) -> void:
-	print("hole entered")
-	hole = _hole
+	velocity = _inputVector.normalized() * speed
+
+func _physics_process(_delta: float) -> void:
+	match state:
+		States.FREE:
+			get_input()
+			animate()
+			
+			velocity = move_and_slide(velocity)
+			
+		States.ACTION:
+			sprite.play("Action")
+			velocity = Vector2()
+
+func interact() -> void:
+	state = States.ACTION
 	
-func on_hole_exited(area : Area2D, _hole : Area2D) -> void:
-	print("hole exited")
-	hole = null
+	interactionTimer.start()
+	yield(interactionTimer, "timeout")
+	
+	itemSprite.show()
+	state = States.FREE
 
-func interact_with_hole() -> void:
-	if carried_item < 0:
-		carried_item = hole.item
-		print (carried_item)
-
-
-func _on_DeliveryZone_area_entered(area : Area2D):
-	if carried_item >= 0:
-		carried_item = -1
-		get_parent().add_score()
-		print(carried_item)
+func animate() -> void:
+	if velocity != Vector2.ZERO:
+		sprite.play("Walk")
+		
+		if velocity.x != 0:
+			sprite.flip_h = (velocity.x > 0)
+	else:
+		sprite.play("Idle")

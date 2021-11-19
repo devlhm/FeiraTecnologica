@@ -19,17 +19,49 @@ position = Vector2( 305, 178 )
 
 [node name="Hole" parent="." instance=ExtResource( 2 )]
 position = Vector2( 102, 281 )
-item = 3
 
 [node name="Hole2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 492, 100 )
+position = Vector2( 183, 281 )
 item = 1
 
 [node name="Hole3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 429, 277 )
+position = Vector2( 262, 280 )
+item = 2
+
+[node name="Hole4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 330, 280 )
+item = 3
+
+[node name="Hole5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 394, 273 )
+item = 4
+
+[node name="Hole6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 481, 275 )
+item = 5
 
 [node name="DeliveryZone" parent="." instance=ExtResource( 3 )]
 position = Vector2( 75, 70 )
+
+[node name="DeliveryZone2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 167, 70 )
+type = 1
+
+[node name="DeliveryZone3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 252, 68 )
+type = 2
+
+[node name="DeliveryZone4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 328, 68 )
+type = 3
+
+[node name="DeliveryZone5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 411, 72 )
+type = 4
+
+[node name="DeliveryZone6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 498, 78 )
+type = 5
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -46,11 +78,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="DeveloperNotes"]
 margin_left = 10.0
-margin_top = 10.0
+margin_top = 15.0
 margin_right = 630.0
-margin_bottom = 92.0
-text = "Mudei um pouco do código para deixar mais claro e menos poluído.
-Precisamos fazer cada membro da família aceitar um tipo específico de plástico, infelizmente vou ter que parar por agora por causa do trabalho.
+margin_bottom = 80.0
+text = "Implementei todas as mecânicas de gameplay, falta adicionar os controles pra mobile, as artes, sons, e os menus. Ah, e balancear tbm ;)
  
-Cauê, 19-11-2021"
+Lulu, 19-11-2021 18h37"
 autowrap = true

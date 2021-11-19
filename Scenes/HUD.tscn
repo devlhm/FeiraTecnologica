@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/heart.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/HPBar.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -42,3 +44,33 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HPBar" type="HBoxContainer" parent="." groups=["hp_bar"]]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -40.0
+margin_right = 104.0
+margin_bottom = -20.0
+custom_constants/separation = 15
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HPBar"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect2" type="TextureRect" parent="HPBar"]
+margin_left = 47.0
+margin_right = 79.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="HPBar"]
+margin_left = 94.0
+margin_right = 126.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )

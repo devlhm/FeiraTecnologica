@@ -21,4 +21,6 @@ func _input(event: InputEvent) -> void:
 	var _overlappingBodies: Array = get_overlapping_bodies()
 	
 	if event.is_action_pressed("interact") and _overlappingBodies.size() > 0:
-		(_overlappingBodies[0] as Player).interact()
+		(_overlappingBodies[0] as Player).interact(item)
+
+	

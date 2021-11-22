@@ -3,11 +3,11 @@ extends Area2D
 
 export (ItemTypes.Types) var type: int = 0
 export (float, 0.05, 1, 0.05) var request_chance
-export (float, 1) var request_base_interval = 5
-export var request_interval_rand : float = 1
-export (float, 1) var request_duration = 10
-export (float, 1) var request_min_duration = 5
-export var request_duration_subtrahend : float = .3
+export (float) var request_base_interval = 7
+export var request_interval_rand : float = 2
+export (float) var request_duration = 10
+export (float) var request_min_duration = 5
+export var request_duration_subtrahend : float = .2
 
 var requesting : bool = false
 var lower_duration : bool = false

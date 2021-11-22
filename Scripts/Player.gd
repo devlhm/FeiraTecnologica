@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 enum States { FREE, ACTION }
 
-export (int) var speed = 200
+export (int) var speed = 270
 
 var velocity : Vector2 = Vector2()
 var state: int = States.FREE

@@ -40,6 +40,9 @@ func _physics_process(_delta: float) -> void:
 			velocity = Vector2()
 
 func interact(item: int) -> void:
+	randomize()
+	$DigSFX.pitch_scale = rand_range(0.8, 1.2)
+	$DigSFX.play()
 	itemType = item
 	state = States.ACTION
 	

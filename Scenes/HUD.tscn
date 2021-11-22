@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/heart.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HPBar.gd" type="Script" id=3]
+[ext_resource path="res://Resources/BebasNeueDynamic.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -22,21 +23,25 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -24.0
-margin_top = -30.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
+margin_left = -59.0
+margin_top = -99.0
+grow_horizontal = 0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 20
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScoreLabel" type="Label" parent="Margin"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 16.0
-margin_bottom = 22.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 49.0
+margin_bottom = 79.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = ExtResource( 4 )
 custom_styles/normal = SubResource( 1 )
 text = "0"
 align = 1

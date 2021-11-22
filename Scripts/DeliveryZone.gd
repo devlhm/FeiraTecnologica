@@ -77,6 +77,8 @@ func request_coroutine():
 
 func start_request():
 	requesting = true
+	$RightSFX.play()
+	$RightSFX.pitch_scale = rand_range(0.9, 1.1)
 	$Exclamation.show()
 	$DeliveryTimeBar.show()
 	$DeliveryTimeTween.interpolate_property($DeliveryTimeBar, "value", $DeliveryTimeBar.value, 0, request_duration)
@@ -84,6 +86,7 @@ func start_request():
 
 func _on_delivery_timeout(_object: Object, _key: NodePath) -> void:
 	emit_signal("delivery_timeout")
+	requesting = false
 	
 	yield(get_tree().create_timer(1.0), "timeout")
 	

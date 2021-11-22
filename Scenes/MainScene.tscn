@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Hole.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/DeliveryZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -14,53 +15,60 @@ bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Game" type="YSort"]
 
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 305, 178 )
+position = Vector2( 490, 284 )
 
 [node name="Hole" parent="." instance=ExtResource( 2 )]
-position = Vector2( 102, 281 )
+position = Vector2( 181, 322 )
 
 [node name="Hole2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 183, 281 )
+position = Vector2( 258, 423 )
 item = 1
 
 [node name="Hole3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 262, 280 )
+position = Vector2( 558, 350 )
 item = 2
 
 [node name="Hole4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 330, 280 )
+position = Vector2( 481, 476 )
 item = 3
 
 [node name="Hole5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 394, 273 )
+position = Vector2( 742, 265 )
 item = 4
 
 [node name="Hole6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 481, 275 )
+position = Vector2( 758, 426 )
 item = 5
 
 [node name="DeliveryZone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 75, 70 )
+position = Vector2( 260, 176 )
 
 [node name="DeliveryZone2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 167, 70 )
+position = Vector2( 352, 176 )
 type = 1
 
 [node name="DeliveryZone3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 252, 68 )
+position = Vector2( 437, 174 )
 type = 2
 
 [node name="DeliveryZone4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 328, 68 )
+position = Vector2( 513, 174 )
 type = 3
 
 [node name="DeliveryZone5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 411, 72 )
+position = Vector2( 596, 178 )
 type = 4
 
 [node name="DeliveryZone6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 498, 78 )
+position = Vector2( 683, 184 )
 type = 5
 
 [node name="Canvas" type="CanvasLayer" parent="."]
@@ -78,10 +86,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="DeveloperNotes"]
 margin_left = 10.0
-margin_top = 15.0
+margin_top = 32.0
 margin_right = 630.0
-margin_bottom = 80.0
-text = "Implementei todas as mecânicas de gameplay, falta adicionar os controles pra mobile, as artes, sons, e os menus. Ah, e balancear tbm ;)
- 
-Lulu, 19-11-2021 18h37"
+margin_bottom = 63.0
+text = "Implementei os sprites cirados pelo Samuel.
+Cauê, 22.11.2021 - 2:35PM"
 autowrap = true

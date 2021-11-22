@@ -11,11 +11,13 @@ export(
 	"PS"
 ) var item: int = ItemTypes.PET
 
-onready var sprite: Sprite = ($Sprite as Sprite)
+onready var sprite: AnimatedSprite = ($Sprite as AnimatedSprite)
 
 func _ready() -> void:
 	add_to_group("hole")
-	sprite.frame = randi() % sprite.hframes
+	
+	randomize()
+	sprite.frame = randi() % 2
 
 func _input(event: InputEvent) -> void:
 	var _overlappingBodies: Array = get_overlapping_bodies()

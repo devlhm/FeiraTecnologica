@@ -1,14 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Menu/Buttons/Play.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Menu/Buttons/Options.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Menu/Buttons/Quit.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Menu/BackgroundMenu.png" type="Texture" id=5]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -21,10 +31,10 @@ __meta__ = {
 }
 
 [node name="Vertical" type="VBoxContainer" parent="Center"]
-margin_left = 245.0
-margin_top = 115.0
-margin_right = 395.0
-margin_bottom = 245.0
+margin_left = 405.0
+margin_top = 205.0
+margin_right = 555.0
+margin_bottom = 335.0
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="Center/Vertical"]
 margin_right = 150.0

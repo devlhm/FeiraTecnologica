@@ -1,10 +1,9 @@
 extends Node
 
-const PET: int = 0
-const PEAD: int = 1
+const PEAD: int = 0
+const PVC: int = 1
 const PEBD: int = 2
-const PVC: int = 3
-const PP: int = 4
-const PS: int = 5
+const PP: int = 3
+const PS: int = 4
 
-enum Types { PET, PEAD, PEBD, PVC, PP, PS }
+enum Types { PEAD, PVC, PEBD, PP, PS }

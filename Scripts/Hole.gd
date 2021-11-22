@@ -1,23 +1,32 @@
 class_name Hole
 extends Area2D
 
+var icons_path : String = "res://Sprites/Icons/"
+
 export(
 	int,
-	"PET",
 	"PEAD",
-	"PEBD",
 	"PVC",
+	"PEBD",
 	"PP",
 	"PS"
-) var item: int = ItemTypes.PET
+) var item: int = ItemTypes.PEBD
 
 onready var sprite: AnimatedSprite = ($Sprite as AnimatedSprite)
-
 func _ready() -> void:
-	add_to_group("hole")
+	if !is_in_group("hole"):
+		add_to_group("hole")
 	
 	randomize()
 	sprite.frame = randi() % 2
+	
+	
+func set_type(type : int) -> void:
+	item = type
+	
+	var icon_texture : Resource = load(icons_path + str(type + 2) + "gun.png")
+	var icon_sprite: Sprite = ($Arrow/Icon as Sprite)
+	icon_sprite.texture = icon_texture
 
 func _input(event: InputEvent) -> void:
 	var _overlappingBodies: Array = get_overlapping_bodies()

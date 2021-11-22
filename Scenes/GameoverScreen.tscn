@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Menu/BackgroundMenu.png" type="Texture" id=1]
+[ext_resource path="res://Resources/BebasNeueDynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Menu/Buttons/Quit.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Menu/Buttons/Play.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Resources/BebasNeueFont.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/GameoverScreen.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[node name="GameoverScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="ColorRect" parent="Center"]
+margin_left = 240.0
+margin_top = 30.0
+margin_right = 720.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 480, 480 )
+color = Color( 0.0980392, 0.0980392, 0.0980392, 0.588235 )
+
+[node name="Margin" type="MarginContainer" parent="Center/Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vertical" type="VBoxContainer" parent="Center/Container/Margin"]
+margin_right = 440.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Center/Container/Margin/Vertical"]
+margin_right = 440.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 2 )
+text = "Você Perdeu!"
+align = 1
+valign = 1
+
+[node name="ScoreboardContainer" type="VBoxContainer" parent="Center/Container/Margin/Vertical"]
+margin_top = 74.0
+margin_right = 440.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text" type="Label" parent="Center/Container/Margin/Vertical/ScoreboardContainer"]
+margin_right = 440.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+text = "Placar"
+align = 1
+valign = 1
+
+[node name="Scoreboard" type="Label" parent="Center/Container/Margin/Vertical/ScoreboardContainer"]
+margin_top = 28.0
+margin_right = 440.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="InputContainer" type="HBoxContainer" parent="Center/Container/Margin/Vertical"]
+margin_top = 345.0
+margin_right = 440.0
+margin_bottom = 385.0
+custom_constants/separation = 10
+
+[node name="LineEdit" type="LineEdit" parent="Center/Container/Margin/Vertical/InputContainer"]
+margin_right = 390.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "41414"
+align = 1
+max_length = 10
+clear_button_enabled = true
+selecting_enabled = false
+placeholder_text = "Digite as suas iniciais"
+caret_blink = true
+
+[node name="TextureButton" type="TextureButton" parent="Center/Container/Margin/Vertical/InputContainer"]
+margin_left = 400.0
+margin_right = 440.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="Center/Container/Margin/Vertical"]
+margin_top = 400.0
+margin_right = 440.0
+margin_bottom = 440.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="Center/Container/Margin/Vertical/ButtonsContainer"]
+margin_left = 55.0
+margin_right = 205.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="Center/Container/Margin/Vertical/ButtonsContainer"]
+margin_left = 235.0
+margin_right = 385.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5

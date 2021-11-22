@@ -82,7 +82,7 @@ func start_request():
 	$DeliveryTimeTween.interpolate_property($DeliveryTimeBar, "value", $DeliveryTimeBar.value, 0, request_duration)
 	$DeliveryTimeTween.start()
 
-func _on_delivery_timeout(object: Object, key: NodePath) -> void:
+func _on_delivery_timeout(_object: Object, _key: NodePath) -> void:
 	emit_signal("delivery_timeout")
 	
 	yield(get_tree().create_timer(1.0), "timeout")

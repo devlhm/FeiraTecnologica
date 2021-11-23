@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/certo.ogg-9b9acd7d1e324d23720c2dd7b4c29b51.oggstr"
+
+[deps]
+
+source_file="res://Sounds/certo.ogg"
+dest_files=[ "res://.import/certo.ogg-9b9acd7d1e324d23720c2dd7b4c29b51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

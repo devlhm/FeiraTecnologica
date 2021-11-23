@@ -3,10 +3,10 @@ extends Area2D
 
 export (ItemTypes.Types) var type: int = 0
 export (float, 0.05, 1, 0.05) var request_chance
-export (float, 1) var request_base_interval = 5
-export var request_interval_rand : float = 1
-export (float, 1) var request_duration = 10
-export (float, 1) var request_min_duration = 5
+export (float) var request_base_interval = 7
+export var request_interval_rand : float = 2
+export (float) var request_duration = 15
+export (float) var request_min_duration = 7
 export var request_duration_subtrahend : float = .3
 
 var requesting : bool = false
@@ -43,9 +43,6 @@ func on_body_entered(body: Node) -> void:
 	if itemType == type and requesting:
 		_bodyTyped.empty_item()
 		emit_signal("item_received")
-	else:
-		# error sound or something like that
-		pass
 		
 func on_lower_duration():
 	lower_duration = true
@@ -77,6 +74,8 @@ func request_coroutine():
 
 func start_request():
 	requesting = true
+	$OrderSFX.pitch_scale = rand_range(0.9, 1.1)
+	$OrderSFX.play()
 	$Exclamation.show()
 	$DeliveryTimeBar.show()
 	$DeliveryTimeTween.interpolate_property($DeliveryTimeBar, "value", $DeliveryTimeBar.value, 0, request_duration)
@@ -84,10 +83,16 @@ func start_request():
 
 func _on_delivery_timeout(_object: Object, _key: NodePath) -> void:
 	emit_signal("delivery_timeout")
+	requesting = false
 	
-	yield(get_tree().create_timer(1.0), "timeout")
+	$WrongSFX.pitch_scale = rand_range(0.9, 1.1)
+	$WrongSFX.play()
+	
+	yield(get_tree().create_timer(.5), "timeout")
 	
 	reset_request()
+	
+	
 	
 func reset_request() -> void:
 	$Exclamation.hide()
@@ -103,6 +108,8 @@ func on_item_received() -> void:
 	$DeliveryTimeBar.hide()
 	$DeliveryTimeBar.value = $DeliveryTimeBar.max_value
 	$DeliveryTimeTween.stop_all()
+	$RightSFX.pitch_scale = rand_range(0.9, 1.1)
+	$RightSFX.play()
 	
 	#	-- Placeholder until other items sprites:
 	GameController.add_score()

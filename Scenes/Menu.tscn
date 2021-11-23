@@ -32,14 +32,14 @@ __meta__ = {
 
 [node name="Vertical" type="VBoxContainer" parent="Center"]
 margin_left = 405.0
-margin_top = 227.0
+margin_top = 222.0
 margin_right = 555.0
-margin_bottom = 312.0
+margin_bottom = 317.0
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="Center/Vertical"]
 margin_right = 150.0
-margin_bottom = 85.0
-custom_constants/separation = 5
+margin_bottom = 95.0
+custom_constants/separation = 15
 
 [node name="Play" type="TextureButton" parent="Center/Vertical/ButtonsContainer"]
 margin_right = 150.0
@@ -52,9 +52,9 @@ stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="Center/Vertical/ButtonsContainer"]
 visible = false
-margin_top = 45.0
+margin_top = 55.0
 margin_right = 150.0
-margin_bottom = 85.0
+margin_bottom = 95.0
 rect_min_size = Vector2( 150, 40 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
@@ -62,9 +62,9 @@ expand = true
 stretch_mode = 5
 
 [node name="Quit" type="TextureButton" parent="Center/Vertical/ButtonsContainer"]
-margin_top = 45.0
+margin_top = 55.0
 margin_right = 150.0
-margin_bottom = 85.0
+margin_bottom = 95.0
 rect_min_size = Vector2( 150, 40 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )

@@ -1,17 +1,27 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Hole.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/DeliveryZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/PEAD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Background.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/PVC.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/PEBD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/PS.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/PP.tscn" type="PackedScene" id=9]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=9]
 content_margin_left = 10.0
 content_margin_right = 10.0
 content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 5, 270 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 490 )
 
 [node name="Game" type="YSort"]
 
@@ -23,53 +33,22 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 490, 284 )
-
-[node name="Hole" parent="." instance=ExtResource( 2 )]
-position = Vector2( 181, 322 )
+position = Vector2( 534, 333 )
 
 [node name="Hole2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 258, 423 )
-item = 1
+position = Vector2( 280, 325 )
 
 [node name="Hole3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 558, 350 )
-item = 2
+position = Vector2( 463, 444 )
 
 [node name="Hole4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 481, 476 )
-item = 3
+position = Vector2( 807, 469 )
 
 [node name="Hole5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 742, 265 )
-item = 4
+position = Vector2( 100, 396 )
 
 [node name="Hole6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 758, 426 )
-item = 5
-
-[node name="DeliveryZone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 260, 176 )
-
-[node name="DeliveryZone2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 352, 176 )
-type = 1
-
-[node name="DeliveryZone3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 437, 174 )
-type = 2
-
-[node name="DeliveryZone4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 513, 174 )
-type = 3
-
-[node name="DeliveryZone5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 596, 178 )
-type = 4
-
-[node name="DeliveryZone6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 683, 184 )
-type = 5
+position = Vector2( 699, 339 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -79,7 +58,7 @@ type = 5
 margin_top = -110.0
 margin_right = 640.0
 margin_bottom = -14.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,3 +71,43 @@ margin_bottom = 63.0
 text = "Implementei os sprites cirados pelo Samuel.
 Cauê, 22.11.2021 - 2:35PM"
 autowrap = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -5, 269.5 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 965, 269.5 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 482, 69 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 482, 543 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="DeliveryZone3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 845, 205 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="DeliveryZone2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 460, 215 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="DeliveryZone4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 242, 210 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="DeliveryZone5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 653, 213 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="DeliveryZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 82, 229 )
+scale = Vector2( 0.5, 0.5 )

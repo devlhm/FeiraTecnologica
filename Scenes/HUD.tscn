@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/heart.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Icons/coracao.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/HPBar.gd" type="Script" id=3]
 [ext_resource path="res://Resources/BebasNeueDynamic.tres" type="DynamicFont" id=4]
 
@@ -53,29 +53,37 @@ __meta__ = {
 [node name="HPBar" type="HBoxContainer" parent="." groups=["hp_bar"]]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = -50.0
-margin_right = 104.0
-margin_bottom = -20.0
-custom_constants/separation = 15
+margin_left = 20.0
+margin_top = -88.0
+margin_right = 50.0
+margin_bottom = -168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="HPBar"]
-margin_right = 32.0
-margin_bottom = 32.0
+margin_right = 70.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
 texture = ExtResource( 2 )
+expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="HPBar"]
-margin_left = 47.0
-margin_right = 79.0
-margin_bottom = 32.0
+margin_left = 80.0
+margin_right = 150.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
 texture = ExtResource( 2 )
+expand = true
 
 [node name="TextureRect3" type="TextureRect" parent="HPBar"]
-margin_left = 94.0
-margin_right = 126.0
-margin_bottom = 32.0
+margin_left = 160.0
+margin_right = 230.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
 texture = ExtResource( 2 )
+expand = true

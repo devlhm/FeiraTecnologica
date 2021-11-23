@@ -10,14 +10,14 @@
 [ext_resource path="res://Scenes/Characters/PS.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/PP.tscn" type="PackedScene" id=9]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=9]
 content_margin_left = 10.0
 content_margin_right = 10.0
 content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 5, 270 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -33,26 +33,22 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 490, 284 )
-scale = Vector2( 1.00323, 0.964518 )
+position = Vector2( 534, 333 )
 
 [node name="Hole2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 276, 438 )
-item = 1
+position = Vector2( 280, 325 )
 
 [node name="Hole3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 485, 360 )
+position = Vector2( 463, 444 )
 
 [node name="Hole4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 809, 295 )
+position = Vector2( 807, 469 )
 
 [node name="Hole5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 130, 307 )
-item = 4
+position = Vector2( 100, 396 )
 
 [node name="Hole6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 761, 433 )
-item = 5
+position = Vector2( 699, 339 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -62,7 +58,7 @@ item = 5
 margin_top = -110.0
 margin_right = 640.0
 margin_bottom = -14.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,11 +76,11 @@ autowrap = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2( -5, 269.5 )
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 965, 269.5 )
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 482, 69 )
@@ -97,20 +93,21 @@ rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="DeliveryZone3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 686, 154 )
-scale = Vector2( 1, 1 )
+position = Vector2( 845, 205 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="DeliveryZone2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 454, 153 )
-scale = Vector2( 1, 1 )
+position = Vector2( 460, 215 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="DeliveryZone4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 336, 149 )
-scale = Vector2( 1, 1 )
+position = Vector2( 242, 210 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="DeliveryZone5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 567, 152 )
-scale = Vector2( 1, 1 )
+position = Vector2( 653, 213 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="DeliveryZone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 210, 154 )
+position = Vector2( 82, 229 )
+scale = Vector2( 0.5, 0.5 )

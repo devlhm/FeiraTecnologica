@@ -1,15 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/DeliveryZone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Characters/pebd_char.png" type="Texture" id=2]
+[ext_resource path="res://Themes/BarTheme.tres" type="Theme" id=3]
 
 [node name="DeliveryZone" instance=ExtResource( 1 )]
 type = 2
 
+[node name="Exclamation" parent="." index="0"]
+position = Vector2( 77, -319 )
+scale = Vector2( 0.75, 0.75 )
+
 [node name="Sprite" parent="." index="1"]
-position = Vector2( -1, 48 )
+position = Vector2( -1, -76 )
 texture = ExtResource( 2 )
 offset = Vector2( 1, -48 )
 
 [node name="Collision" parent="." index="2"]
 visible = true
+position = Vector2( 0, -12 )
+
+[node name="DeliveryTimeBar" parent="." index="4"]
+margin_left = -69.0
+margin_top = 74.0
+margin_right = 81.0
+margin_bottom = 102.0
+rect_scale = Vector2( 1, 1.0048 )
+theme = ExtResource( 3 )

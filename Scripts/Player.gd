@@ -14,9 +14,11 @@ export var lives : int = 3
 
 onready var interactionTimer: Timer = ($InteractionTimer as Timer)
 onready var sprite: AnimatedSprite = ($Sprite as AnimatedSprite)
-onready var itemSprite: Sprite = ($ItemSprite as Sprite)
+onready var itemSprite: AnimatedSprite = ($ItemSprite as AnimatedSprite)
+onready var initial_item_pos := itemSprite.position
 
 func _ready() -> void:
+	
 	get_tree().call_group("hole", "set", "player", self)
 
 func get_input() -> void:
@@ -50,6 +52,7 @@ func interact(item: int) -> void:
 	yield(interactionTimer, "timeout")
 	
 	itemSprite.show()
+	itemSprite.frame = item
 	state = States.FREE
 	
 func get_item_type() -> int:
@@ -63,8 +66,12 @@ func animate() -> void:
 	if velocity != Vector2.ZERO:
 		sprite.play("Walk")
 		
-		if velocity.x != 0:
-			sprite.flip_h = (velocity.x > 0)
+		if velocity.x < 0:
+			sprite.flip_h = true
+			itemSprite.position.x = initial_item_pos.x * -1
+		else:
+			sprite.flip_h = false
+			itemSprite.position.x = initial_item_pos.x
 	else:
 		sprite.play("Idle")
 

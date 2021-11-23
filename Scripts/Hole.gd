@@ -3,14 +3,7 @@ extends Area2D
 
 var icons_path : String = "res://Sprites/Icons/"
 
-export(
-	int,
-	"PEAD",
-	"PVC",
-	"PEBD",
-	"PP",
-	"PS"
-) var item: int = ItemTypes.PEBD
+var item: int = ItemTypes.PEBD
 
 onready var sprite: AnimatedSprite = ($Sprite as AnimatedSprite)
 func _ready() -> void:
@@ -25,7 +18,7 @@ func set_type(type : int) -> void:
 	item = type
 	
 	var icon_texture : Resource = load(icons_path + str(type + 2) + "gun.png")
-	var icon_sprite: Sprite = ($Arrow/Icon as Sprite)
+	var icon_sprite: Sprite = ($Sign/Icon as Sprite)
 	icon_sprite.texture = icon_texture
 
 func _input(event: InputEvent) -> void:

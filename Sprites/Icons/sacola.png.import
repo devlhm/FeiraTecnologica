@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Balao.png-01ed3156b0c18ff5146e106130dca91d.stex"
+path="res://.import/sacola.png-f3e7724397a38fc329d7c4c5e6988daa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Balao.png"
-dest_files=[ "res://.import/Balao.png-01ed3156b0c18ff5146e106130dca91d.stex" ]
+source_file="res://Sprites/Icons/sacola.png"
+dest_files=[ "res://.import/sacola.png-f3e7724397a38fc329d7c4c5e6988daa.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

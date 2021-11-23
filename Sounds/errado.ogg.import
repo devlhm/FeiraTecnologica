@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/errado.ogg-a336e498d55e5a827a688b88aadcaeb2.oggstr"
+
+[deps]
+
+source_file="res://Sounds/errado.ogg"
+dest_files=[ "res://.import/errado.ogg-a336e498d55e5a827a688b88aadcaeb2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

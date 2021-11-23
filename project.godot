@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "HTTPRequest",
-"class": "APIResquest",
-"language": "GDScript",
-"path": "res://Scripts/APIRequest.gd"
-}, {
 "base": "Area2D",
 "class": "DeliveryZone",
 "language": "GDScript",
@@ -40,7 +35,6 @@ _global_script_classes=[ {
 "path": "res://Scripts/Player.gd"
 } ]
 _global_script_class_icons={
-"APIResquest": "",
 "DeliveryZone": "",
 "GameoverScreen": "",
 "HPBar": "",

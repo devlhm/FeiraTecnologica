@@ -15,3 +15,4 @@ func add_score() -> void:
 
 func game_over() -> void:
 	print("game over")
+	get_tree().change_scene("res://Scenes/GameoverScreen.tscn")
